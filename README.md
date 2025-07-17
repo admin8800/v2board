@@ -139,7 +139,7 @@ php -c cli-php.ini webman.php start
 
 
 
-### 最后进入网站设置，申请SSL证书就搭建完成了
+### 最后点击网站，进入网站设置，申请SSL证书就搭建完成了
 
 <img src="docs/15.jpg" width="80%">
 
