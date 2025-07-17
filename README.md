@@ -8,7 +8,7 @@
 
 ### 第一步首先安装宝塔
 
-国际版宝塔地址：https://www.aapanel.com/new/download.html
+国际版宝塔地址：https://www.aapanel.com/new/download.html 选择下面的免费版本
 
 **安装完成后登录宝塔，登录页面语言选择繁体中文，进入面板后安装如下运行环境**
 
