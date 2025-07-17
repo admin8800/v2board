@@ -24,7 +24,7 @@
 ---
 
 ## 安装Redis、fileinfo、opcache
- 宝塔 面板 > 软件商店 > 找到PHP 8.1 点击`设定` > `Install extentions` > 安装`redis`,`fileinfo`,`opcache`扩展。
+ 宝塔 面板 > 软件商店 > 找到PHP 8.1 点击`设定` > `Install extentions` > 安装`redis`，`fileinfo`，`opcache`扩展。
 预计耗时：5分钟
 
 ![image](docs/3.png) 
