@@ -36,7 +36,7 @@ services:
 ```
 docker compose up -d
 ```
-- 安装数据库
+- 导入数据库
 ```
 docker exec -it v2board php artisan v2board:install
 ```
