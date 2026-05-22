@@ -3,7 +3,7 @@ FROM php:8.1-fpm-bookworm AS builder
 ARG V2BOARD_REPO=https://github.com/wyx2685/v2board.git
 ARG V2BOARD_BRANCH=master
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     git unzip curl wget \
     libzip-dev libpng-dev libjpeg-dev libfreetype6-dev \
     libonig-dev libxml2-dev libcurl4-openssl-dev \
@@ -36,7 +36,7 @@ RUN sed -i 's/REDIS_HOST=127.0.0.1/REDIS_HOST=redis/g' .env.example \
 
 FROM php:8.1-fpm-bookworm
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     nginx supervisor curl \
     libzip4 libpng16-16 libjpeg62-turbo libfreetype6 libonig5 libxml2 \
     && rm -f /etc/nginx/sites-enabled/default /etc/nginx/conf.d/default.conf \
