@@ -16,7 +16,7 @@
 ☑️ MySQL 5.7
 ☑️ PHP 8.1
 
-<img src="1.jpg" width="35%">
+<img src="img/1.jpg" width="35%">
 
 等待安装完毕
 预计耗时：10-30分钟之间
@@ -27,9 +27,9 @@
  宝塔 面板 > 软件商店 > 找到PHP 8.1 点击`设定` > `Install extentions` > 安装`redis`，`fileinfo`，`opcache`扩展。
 预计耗时：5分钟
 
-![image](3.png) 
+![image](img/3.png) 
 
-![image](4.png) 
+![image](img/4.png) 
 
  
 
@@ -37,7 +37,7 @@
 进行这一步之前，建议要等到 `redis`,`fileinfo`,`opcache` 安装完成之后再进行操作。否则可能在安装依赖试提示未禁用 某些函数
 
 宝塔 面板 > 软件商店 > 找到PHP 8.1   点击`设定` > `Disabled functions` 将 `putenv` 、`proc_open`、`pcntl_alarm`、`pcntl_signal` 从列表中删除。
-![image](5.png) 
+![image](img/5.png) 
 
 
 
@@ -47,7 +47,7 @@
 在 域名 填入你指向服务器的域名
 在 Database 选择MySQL
 在 PHP Verison 选择PHP-8.1
-![image](6.png) 
+![image](img/6.png) 
 
 ## 登录到SSH 进行下面的操作
 
@@ -67,16 +67,16 @@ git clone https://github.com/wyx2685/v2board.git
 cd v2board && bash init.sh
 ```
 
-![image](7.png) 
+![image](img/7.png) 
 
-![image](8.png) 
+![image](img/8.png) 
 
 
 ## 配置站点目录及伪静态
 
 返回到宝塔页面， 选择网站， 点击 网站名，`站点目录`跟我保持一样
 
-<img src="9.jpg" width="70%">
+<img src="img/9.jpg" width="70%">
 
 
 ## 然后选择`URL重寫`，也就是伪静态，填写以下内容
@@ -115,15 +115,15 @@ access_log /dev/null;
 ```
 根据上述信息添加每1分钟执行一次的定时任务。
 
-![image](10.png) 
+![image](img/10.png) 
 
 
 ## 守护任务及启用webman
 打开宝塔-点击软件商店-应用搜索 `Supervisor` 执行安装，中文版宝塔则是叫`进程守护管理器`
 
-![image](11.jpg) 
+![image](img/11.jpg) 
 
-![image](12.png) 
+![image](img/12.png) 
 
 **添加启动命令**
 ```
@@ -135,13 +135,13 @@ php artisan horizon
 php -c cli-php.ini webman.php start
 ```
 
-![image](13.png) 
+![image](img/13.png) 
 
 
 
 ### 最后点击网站，进入网站设置，申请SSL证书就搭建完成了
 
-<img src="15.jpg" width="80%">
+<img src="img/15.jpg" width="80%">
 
 ###  注意
 
