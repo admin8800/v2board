@@ -23,4 +23,4 @@ docker cp v2board:/www/.env ./.env
 
 ---
 
-**[宝塔部署文档](README.md)**
+**[宝塔部署文档](docs/README.md)**
