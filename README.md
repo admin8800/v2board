@@ -58,10 +58,14 @@ docker cp v2board:/www/.env ./.env
       - ./.env:/www/.env
 ```
 
+主题
+```
+docker cp ./aurora v2board:/www/public/theme/
+```
+
 ---
 
 **[宝塔部署文档](docs/README.md)**
-
 
 ---
 
