@@ -11,4 +11,4 @@ mkdir -p \
 
 chown -R www-data:www-data /www/storage /www/bootstrap/cache
 
-exec /usr/bin/supervisord -n
+exec supervisord -c /etc/supervisord.conf

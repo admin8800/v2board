@@ -61,3 +61,36 @@ docker cp v2board:/www/.env ./.env
 ---
 
 **[宝塔部署文档](docs/README.md)**
+
+
+---
+
+### v2node
+`/etc/v2node/config.json`
+```
+{
+  "Log": {
+    "Level": "info",
+    "Output": "",
+    "Access": "none"
+  },
+  "Nodes": [
+    {
+      "ApiHost": "http://127.0.0.1:8080",
+      "NodeID": 1,
+      "ApiKey": "xxxxxxxxxxx",
+      "Timeout": 15,
+      "RetryCount": 1
+    }
+  ]
+}
+```
+
+```
+docker run -d \
+  --name v2node \
+  --restart=always \
+  --network=host \
+  -v /etc/v2node/config.json:/etc/v2node/config.json:ro \
+  ghcr.io/wyx2685/v2node
+```
