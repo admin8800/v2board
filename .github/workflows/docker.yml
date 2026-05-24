@@ -15,11 +15,13 @@ permissions:
 
 env:
   IMAGE_NAME: ghcr.io/${{ github.repository }}
+  DOCKERHUB_IMAGE_NAME: docker.io/${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}
 
 jobs:
   build:
     name: 构建并推送多架构镜像
     runs-on: ubuntu-latest
+
     steps:
       - name: 拉取代码
         uses: actions/checkout@v6
@@ -34,6 +36,13 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: 登录 Docker Hub
+        uses: docker/login-action@v4
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
       - name: 构建并推送镜像
         uses: docker/build-push-action@v7
         with:
@@ -43,3 +52,5 @@ jobs:
           tags: |
             ${{ env.IMAGE_NAME }}:${{ inputs.version }}
             ${{ env.IMAGE_NAME }}:latest
+            ${{ env.DOCKERHUB_IMAGE_NAME }}:${{ inputs.version }}
+            ${{ env.DOCKERHUB_IMAGE_NAME }}:latest
