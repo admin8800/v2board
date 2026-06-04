@@ -8,7 +8,7 @@ on:
         default: "v1.0.0"
 
   schedule:
-    - cron: "0 0 * * 0"
+    - cron: "0 0 1 * *"
 
 permissions:
   contents: read
@@ -51,7 +51,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ${{ env.IMAGE_NAME }}:${{ inputs.version }}
+            ${{ env.IMAGE_NAME }}:${{ inputs.version || 'latest' }}
             ${{ env.IMAGE_NAME }}:latest
-            ${{ env.DOCKERHUB_IMAGE_NAME }}:${{ inputs.version }}
+            ${{ env.DOCKERHUB_IMAGE_NAME }}:${{ inputs.version || 'latest' }}
             ${{ env.DOCKERHUB_IMAGE_NAME }}:latest
